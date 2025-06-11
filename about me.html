@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramsey Asiedu - Graphic Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: black;
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: left;
+      border: none;
+      margin: 0 auto 20px;
+      background: yellow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      color: white;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+      
+     
+    }
+    
+    .tagline {
+      font-size: 1.4rem;
+      color: #94a3b8;
+      margin-bottom: 20px;
+      
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+      
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+       background: rgba(30, 30, 30, 0.5);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+    
+    .main-content {
+      display: grid;
+      grid-template-columns:  1fr;
+      gap: 30px;
+      margin: 30px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .card {
+      background: rgba(30, 30, 30, 0.5);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+      border-radius: 10px;
+      padding: 30px;
+     
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #3b82f6;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .card h2 i {
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .about-text {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    
+    .highlight {
+      color: #3b82f6;
+      font-weight: 600;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .skill-card {
+      background: rgba(30, 30, 30, 0.5);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .skill-card:hover {
+      background: rgba(56, 78, 119, 0.6);
+      transform: scale(1.05);
+    }
+    
+    .skill-card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #60a5fa;
+    }
+    
+    .experience-item {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .experience-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .company {
+      font-weight: 600;
+      color: #3b82f6;
+      font-size: 1.2rem;
+    }
+    
+    .date {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin: 5px 0;
+    }
+    
+    .achievement {
+      background: rgba(56, 78, 119, 0.3);
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 10px;
+      border-left: 3px solid #3b82f6;
+    }
+    
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .award-card {
+       background: rgba(30, 30, 30, 0.5);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .award-card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+    }
+    
+    .award-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    
+    .award-org {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    
+    .award-year {
+       background: rgba(30, 30, 30, 0.5);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: auto;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    
+    .social-links a {
+      color: #cbd5e1;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #3b82f6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img class="profile-img"  src="img/logo/IMG_6706.png" alt="Ramsey Asiedu">
+       
+        <!-- Placeholder for profile image, replace with actual image URL -->
+       
+      </div>
+      <h1>Ramsey Asiedu</h1>
+      <div class="tagline">Creative Graphic Designer Specializing in Sports Branding & Event Promotions</div>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>ramseyasiedu191@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>(+233) 530998476</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Takoradi, Ghana</span>
+        </div>
+      </div>
+    </header>
+    
+    <div class="main-content">
+      <div class="card">
+        <h2><i class="fas fa-user"></i> About Me</h2>
+        <p class="about-text">
+          I'm a dedicated and results-driven <span class="highlight">Graphic Designer</span> with qualifications and professional experience in print design, multimedia, and marketing. With a passion for innovative design, I specialize in <span class="highlight">sports branding and event promotions</span>, creating visually compelling identities that resonate with audiences.
+        </p>
+        <p class="about-text">
+          My approach combines creative vision with strategic thinking, ensuring every design solution not only looks exceptional but also achieves measurable results. I thrive in collaborative environments and excel at building "win-win" partnerships through exceptional client and vendor relations.
+        </p>
+        <p class="about-text">
+          Currently pursuing my <span class="highlight">Bachelor of Technology in Graphic Design</span> at Takoradi Technical University, I'm constantly expanding my skills and staying at the forefront of design innovation.
+        </p>
+      </div>
+      
+      <div class="card">
+        <h2><i class="fas fa-tools"></i> Design Expertise</h2>
+        <p>Proficient in industry-leading design software with a comprehensive skill set:</p>
+        
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fab fa-adobe"></i>
+            <div>Adobe Creative Suite</div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-paint-brush"></i>
+            <div>Corel Draw</div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-layer-group"></i>
+            <div>Affinity Suite</div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-object-group"></i>
+            <div>Illustrator</div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-crop-alt"></i>
+            <div>Photoshop</div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-file-alt"></i>
+            <div>InDesign</div>
+          </div>
+          <div class="skill-card">0
+            <i class="fas fa-sun"></i>
+            <div>Lightroom</div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-mobile-alt"></i>
+            <div>Adobe XD</div>
+          </div>
+        </div>
+        
+        <h2 style="margin-top: 30px;"><i class="fas fa-globe"></i> Languages</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fas fa-language"></i>
+            <div>English (Native)</div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-language"></i>
+            <div>Twi (Native)</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+        
+        <div class="experience-item">
+          <div class="company">Nii Israel Creative Studio, Accra</div>
+          <div class="date">June 2023 – December 2023 | Graphic Designer</div>
+          <ul>
+            <li>Designed digital and print materials for multinational corporations and local startups</li>
+            <li class="achievement">Played key role in rebranding leading food processing company resulting in <span class="highlight">20% market share increase</span></li>
+            <li>Managed multiple projects ensuring timely delivery without compromising quality</li>
+          </ul>
+        </div>
+        
+        <div class="experience-item">
+          <div class="company">Wonder World Institute of Creation, Accra</div>
+          <div class="date">September 2022 – May 2023 | Junior Graphic Designer</div>
+          <ul>
+            <li>Coordinated with senior designers to align design work with client objectives</li>
+            <li>Contributed innovative solutions during brainstorming sessions</li>
+            <li>Developed expertise in typography, color theory, and layout design</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><i class="fas fa-award"></i> Awards & Recognition</h2>
+        
+        <div class="awards-grid">
+          <div class="award-card">
+            <div class="award-title">Best Sports Branding Campaign</div>
+            <div class="award-org">Design Excellence Awards</div>
+            <div class="award-year">2024</div>
+          </div>
+          
+          <div class="award-card">
+            <div class="award-title">Top 30 Under 30 Designers</div>
+            <div class="award-org">Design Magazine</div>
+            <div class="award-year">2023</div>
+          </div>
+          
+          <div class="award-card">
+            <div class="award-title">Gold Award in Visual Communication</div>
+            <div class="award-org">Applied Art Design Awards</div>
+            <div class="award-year">2024</div>
+          </div>
+        </div>
+        
+        <h2 style="margin-top: 30px;"><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="experience-item">
+          <div class="company">Bachelor of Technology in Graphic Design</div>
+          <div class="date">2024 - Present | Takoradi Technical University</div>
+        </div>
+        
+        <div class="experience-item">
+          <div class="company">Certificate in Arts and Technology</div>
+          <div class="date">2022 | Ebenezer Senior High School</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>© 2024 Ramsey Asiedu | Graphic Designer</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-behance"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
