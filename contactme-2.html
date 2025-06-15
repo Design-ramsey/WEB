@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Ramsey Asiedu</title>
+  <meta name="description" content="Get in touch with Ramsey Asiedu, Graphic Designer based in Takoradi, Ghana." />
+  <meta name="keywords" content="Ramsey Asiedu, contact, graphic designer, Takoradi, Ghana" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Base Reset & Variables */
+    :root {
+      --primary: #2EC4B6;
+      --primary-dark: #25a596;
+      --secondary: #FF6B6B;
+      --dark: #0A0A0A;
+      --medium: #1E1E1E;
+      --light: #F8FAFC;
+      --text: #E5E5E5;
+      --text-muted: #94A3B8;
+      --transition: all 0.3s ease;
+    }
+    
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    html, body { 
+      height: 100%; 
+      scroll-behavior: smooth; 
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    /* Glassmorphism effect */
+    .glass {
+      position: relative;
+      background: rgba(30, 30, 30, 0.25);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .glass::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    /* Header Section */
+    .header {
+      text-align: center;
+      padding: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(46, 196, 182, 0.1) 0%, transparent 70%);
+      z-index: -1;
+    }
+    
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(30, 30, 30, 0.4);
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+    }
+    
+    .logo img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    /* Contact Form */
+    .form-section {
+      padding: 2.5rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--light);
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+    
+    form {
+      display: grid;
+      gap: 1.5rem;
+    }
+    
+    .form-group {
+      position: relative;
+    }
+    
+    label {
+      position: absolute;
+      top: 0.8rem;
+      left: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      pointer-events: none;
+      transition: var(--transition);
+    }
+    
+    input, textarea {
+      width: 100%;
+      background: rgba(42, 42, 42, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1.5rem 1rem 0.5rem;
+      color: var(--light);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(46, 196, 182, 0.2);
+    }
+    
+    input:focus + label,
+    input:not(:placeholder-shown) + label,
+    textarea:focus + label,
+    textarea:not(:placeholder-shown) + label {
+      top: 0.2rem;
+      font-size: 0.7rem;
+      color: var(--primary);
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    
+    button {
+      padding: 1rem 2rem;
+      background: var(--primary);
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(46, 196, 182, 0.3);
+    }
+    
+    /* Contact Info */
+    .info-section {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: rgba(42, 42, 42, 0.3);
+      border-radius: 12px;
+      transition: var(--transition);
+    }
+    
+    .info-card:hover {
+      transform: translateY(-5px);
+      background: rgba(51, 51, 51, 0.4);
+    }
+    
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(46, 196, 182, 0.1);
+      border-radius: 50%;
+      color: var(--primary);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .info-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--light);
+    }
+    
+    .info-content p, .info-content a {
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+    
+    .info-content a:hover {
+      color: var(--primary);
+    }
+    
+    /* Social Media */
+    .social-section {
+      margin-top: 1rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-link {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(42, 42, 42, 0.3);
+      border-radius: 50%;
+      color: var(--text);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    
+    .social-link:hover {
+      background: var(--primary);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+    
+    /* Map Section */
+    .map-container {
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 1rem;
+      background: rgba(42, 42, 42, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .map-placeholder {
+      text-align: center;
+      padding: 1rem;
+      color: var(--text-muted);
+    }
+    
+    .map-placeholder i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      
+      .form-section, .info-section {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo glass">
+        <i class="fas fa-palette" style="font-size: 2.5rem; color: #2EC4B6;"></i>
+      </div>
+      <h1>Contact Ramsey Asiedu</h1>
+      <p class="subtitle">Feel free to reach out for collaborations, inquiries, or just a friendly hello!</p>
+    </div>
+    
+    <div class="contact-grid">
+      <!-- Contact Form Section -->
+      <div class="form-section glass animate">
+        <h2>Send a Message</h2>
+        <form action="https://formspree.io/f/mqabqrkj" method="POST">
+          <div class="form-group animate delay-1">
+            <input type="text" id="name" name="name" placeholder=" " required />
+            <label for="name">Your Name</label>
+          </div>
+          
+          <div class="form-group animate delay-1">
+            <input type="email" id="email" name="email" placeholder=" " required />
+            <label for="email">Your Email</label>
+          </div>
+          
+          <div class="form-group animate delay-2">
+            <input type="text" id="subject" name="subject" placeholder=" " />
+            <label for="subject">Subject</label>
+          </div>
+          
+          <div class="form-group animate delay-2">
+            <textarea id="message" name="message" placeholder=" " required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          
+          <button type="submit" class="animate delay-3">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+      
+      <!-- Contact Info Section -->
+      <div class="info-section glass animate delay-1">
+        <div class="info-card animate delay-2">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-content">
+            <h3>Email</h3>
+            <a href="mailto:ramseyasiedu191@gmail.com">ramseyasiedu191@gmail.com</a>
+          </div>
+        </div>
+        
+        <div class="info-card animate delay-3">
+          <div class="info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="info-content">
+            <h3>Phone</h3>
+            <a href="tel:+233530998476">(+233) 530 998 476</a>
+          </div>
+        </div>
+        
+        <div class="info-card animate delay-4">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-content">
+            <h3>Location</h3>
+            <p>Takoradi, Ghana</p>
+          </div>
+        </div>
+        
+        <div class="social-section animate delay-4">
+          <h3>Connect With Me</h3>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="map-container glass animate delay-3">
+          <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <p>Takoradi, Ghana</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="animate delay-4">
+      <p>© 2025 Ramsey Asiedu — Graphic Designer</p>
+      <p>Specializing in branding, print design, and creative solutions</p>
+    </footer>
+  </div>
+
+  <script>
+    // Add animation to form elements when they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      // Form validation
+      const form = document.querySelector('form');
+      
+      form.addEventListener('submit', function(e) {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        if (!name || !email || !message) {
+          e.preventDefault();
+          alert('Please fill in all required fields');
+          return;
+        }
+        
+        // Simple email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          e.preventDefault();
+          alert('Please enter a valid email address');
+          return;
+        }
+        
+        // Show sending animation
+        const button = document.querySelector('button[type="submit"]');
+        button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        button.disabled = true;
+      });
+    });
+  </script>
+</body>
+</html>
